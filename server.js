@@ -32,16 +32,16 @@ hbs.registerHelper('getCurrentYear',()=>{
 hbs.registerHelper('screamIt',(text)=>{
   return text.toUpperCase();
 });
-// app.get('/',(req,res)=>{
-// //res.send('<h1>hello express!</h1>');
-// res.send({
-//   name:'brajesh',
-//   likes:[
-//     'biking',
-//     'music'
-//   ]
-// });
-// });
+app.get('/',(req,res)=>{
+//res.send('<h1>hello express!</h1>');
+res.send({
+  name:'brajesh',
+  likes:[
+    'biking',
+    'music'
+  ]
+});
+});
 app.get('/about',(req,res)=>{
   res.render('about.hbs',{
     pageTitle:'About Page'
