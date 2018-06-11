@@ -32,15 +32,12 @@ hbs.registerHelper('getCurrentYear',()=>{
 hbs.registerHelper('screamIt',(text)=>{
   return text.toUpperCase();
 });
-app.get('/',(req,res)=>{
-//res.send('<h1>hello express!</h1>');
-res.send({
-  name:'brajesh',
-  likes:[
-    'biking',
-    'music'
-  ]
-});
+app.get('/home',(req,res)=>{
+  res.render('home.hbs',{
+    pageTitle:'Home Page',
+    welcomeMessage:'welcome to my website'
+  //  currentYear:new Date().getFullYear()
+  });
 });
 app.get('/about',(req,res)=>{
   res.render('about.hbs',{
@@ -53,13 +50,7 @@ app.get('/projects',(req,res)=>{
     pageTitle:'Projects'
   });
 });
-app.get('/home',(req,res)=>{
-  res.render('home.hbs',{
-    pageTitle:'Home Page',
-    welcomeMessage:'welcome to my website'
-  //  currentYear:new Date().getFullYear()
-  });
-});
+
 app.get('/bad',(req,res)=>{
   res.send({
     errorMessage:'unable to handle request'
